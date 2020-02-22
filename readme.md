@@ -13,7 +13,7 @@ Install-Module Plaster
 ## Getting Started
 
 ```Powershell
-# Clone this repos
+# Clone this repo
 git clone <uri> ./plaster-templates
 
 # Create an example
