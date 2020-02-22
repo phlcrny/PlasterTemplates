@@ -1,6 +1,6 @@
 # Plaster Templates
 
-[Plaster](https://github.com/PowerShell/Plaster) is a Powershell project templator
+[Plaster](https://github.com/PowerShell/Plaster) is a Powershell project templater which makes it quicker to create consistent projects.
 
 ## Prerequisites
 
