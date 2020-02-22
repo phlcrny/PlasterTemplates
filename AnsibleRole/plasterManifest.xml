@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest
+  schemaVersion="1.1"
+  templateType="Project" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+  <metadata>
+    <name>AnsibleRole</name>
+    <id>8c22665e-9608-4001-b600-714e17ca9db3</id>
+    <version>1.0.0</version>
+    <title>AnsibleRole</title>
+    <description>A template for an opinionated Ansible role</description>
+    <author>Phil Carney</author>
+    <tags></tags>
+  </metadata>
+  <parameters>
+    <parameter name="Name"
+               type="text"
+               prompt="Enter the name of the role"
+    />
+  </parameters>
+  <content>
+    <templateFile source="Documentation/readme.md" destination="readme.md"/>
+    <file source="gitlab/.gitlab-ci.yml" destination=".gitlab-ci.yml"/>
+    <file source="vscode/settings.json" destination=".vscode/settings.json"/>
+    <file source="vscode/extensions.json" destination=".vscode/extensions.json"/>
+    <file source="YAML/main.yml" destination="tasks/main.yml"/>
+    <file source="YAML/main.yml" destination="vars/main.yml"/>
+    <file source="YAML/main.yml" destination="defaults/main.yml"/>
+    <file source="" destination="templates"/>
+    <file source="" destination="files"/>
+  </content>
+</plasterManifest>
