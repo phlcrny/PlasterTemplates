@@ -23,6 +23,7 @@
     <file source="vscode/settings.json" destination=".vscode/settings.json"/>
     <file source="vscode/extensions.json" destination=".vscode/extensions.json"/>
     <file source="YAML/main.yml" destination="tasks/main.yml"/>
+    <file source="YAML/main.yml" destination="handlers/main.yml"/>
     <file source="YAML/main.yml" destination="vars/main.yml"/>
     <file source="YAML/main.yml" destination="defaults/main.yml"/>
     <file source="" destination="templates"/>
