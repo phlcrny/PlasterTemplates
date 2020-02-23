@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-To make any use these templates, you'll the _Plaster_ Powershell module to be installed.
+To make any use these templates, you'll need the _Plaster_ Powershell module to be installed.
 
 ```Powershell
 Install-Module Plaster
