@@ -1,3 +1,6 @@
 {
-    "files.defaultLanguage": "yaml"
+    "files.associations": {
+    },
+    "files.defaultLanguage": "yaml",
+    "files.trimTrailingWhitespace"
 }
