@@ -1,0 +1,8 @@
+*.retry
+*.bak
+*.rpm
+*.crt
+*.key
+*.pfx
+*_rsa
+.vault_pass

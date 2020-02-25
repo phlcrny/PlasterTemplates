@@ -26,6 +26,7 @@
     <file source="YAML/main.yml" destination="handlers/main.yml"/>
     <file source="YAML/main.yml" destination="vars/main.yml"/>
     <file source="YAML/main.yml" destination="defaults/main.yml"/>
+    <file source="git/.gitignore" destination=".gitignore"/>
     <file source="" destination="templates"/>
     <file source="" destination="files"/>
   </content>
