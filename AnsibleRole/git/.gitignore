@@ -3,6 +3,7 @@
 *.rpm
 *.crt
 *.key
+*.pem
 *.pfx
 *_rsa
 .vault_pass
