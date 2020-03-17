@@ -1,11 +1,10 @@
-image: python
+image: phlcrny/ansible
 
 stages:
 - test
 
 lint:
   script:
-  - pip install ansible-lint
   - ansible-lint .
   stage: test
   tags:
