@@ -1,6 +1,7 @@
 {
     "files.associations": {
         ".ansible-lint": "yaml",
+        "devcontainer.json": "jsonc",
         "inventory": "yaml"
     },
     "files.trimTrailingWhitespace": true
