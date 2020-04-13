@@ -1,0 +1,38 @@
+---
+image: phlcrny/ansible
+
+stages:
+  - test
+  - deploy
+
+lint:
+  stage: test
+  before_script:
+    - chmod 0755 .
+      # For the ansible.cfg 'world-writable directory' warning
+  script:
+    - ansible-lint playbook.yml -c .ansible-lint
+  tags:
+    - docker
+
+deploy:
+  stage: deploy
+  before_script:
+    - chmod 0755 .
+      # For the ansible.cfg 'world-writable directory' warning
+    - ansible-galaxy install -r requirements.yml
+      # Install required roles before running playbook
+  script:
+    - ansible --version
+      # Provide ansible version for visibility
+    - touch .vault_pass && chmod 0600 .vault_pass && echo "$vault_pass" > "$(pwd)/.vault_pass"
+      # Write the vault_pass file from an environment variable then set permissions
+    - ansible-playbook playbook.yml --list-tasks --list-hosts
+      # Remove .vault_pass as soon as we don't need it
+    - rm "$(pwd)/.vault_pass" -f
+  only:
+    - master
+      # We don't want to (accidentally) deploy unfinished code
+  tags:
+    - docker
+...

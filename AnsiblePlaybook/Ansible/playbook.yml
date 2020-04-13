@@ -1,0 +1,60 @@
+---
+- name: <%= $PLASTER_PARAM_Name %>
+  hosts: all
+  gather_facts: true
+  become: yes
+
+  pre_tasks:
+    - name: Set hostname
+      lineinfile:
+        path: /etc/hostname
+        regexp: "default_hostname"
+        line: "new_hostname"
+        state: present
+        create: yes
+
+  roles:
+    - role: example-role
+      tags: ["example"]
+      vars:
+
+  tasks:
+    - name: Example apt task
+      apt:
+        name: unattended-upgrades
+        state: present
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    - name: Example yum task
+      yum:
+        name: ansible
+        state: present
+      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+    - name: Example copy task
+      copy:
+        src: hosts
+        dest: /etc/ansible/hosts
+        owner: root
+        group: root
+        mode: "0755"
+
+    - name: Example template task
+      template:
+        src: config
+        dest: /etc/ansible/ansible.cfg
+        owner: root
+        group: root
+        mode: "0600"
+
+    - name: Example cron job
+      cron:
+        name: "WeeklyReboot"
+        job: "/sbin/shutdown -r now"
+        state: present
+        minute: "30"
+        hour: "1"
+        day: "*"
+        month: "*"
+        weekday: "1"
+...
