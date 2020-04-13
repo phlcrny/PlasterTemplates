@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        ".ansible-lint": "yaml",
+        "inventory": "yaml"
+    },
+    "files.trimTrailingWhitespace": true
+}
