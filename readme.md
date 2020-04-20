@@ -29,7 +29,7 @@ Invoke-Plaster -TemplatePath './plaster-templates/AnsibleRole/' -DestinationPath
 
 A basic Docker image is provided for use on machines which do not have Powershell installed already.
 
-```Docker
+```Powershell
 # Run the container in the current working directory
 docker run -it --rm -v "$(pwd)":/workingDir --name plaster phlcrny/plaster
 
