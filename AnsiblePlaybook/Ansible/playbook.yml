@@ -23,13 +23,19 @@
       apt:
         name: unattended-upgrades
         state: present
+        update_cache: yes
+        cache_valid_time: 3600
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+      tags:
+        - apt
 
     - name: Example yum task
       yum:
         name: ansible
         state: present
       when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+      tags:
+        - yum
 
     - name: Example copy task
       copy:
@@ -38,6 +44,8 @@
         owner: root
         group: root
         mode: "0755"
+      tags:
+        - copy
 
     - name: Example template task
       template:
@@ -46,15 +54,35 @@
         owner: root
         group: root
         mode: "0600"
+      tags:
+        - template
 
     - name: Example cron job
       cron:
-        name: "WeeklyReboot"
-        job: "/sbin/shutdown -r now"
+        name: WeeklyReboot
+        job: /sbin/shutdown -r now
         state: present
         minute: "30"
         hour: "1"
         day: "*"
         month: "*"
         weekday: "1"
+      tags:
+        - cron
+
+    - name: Example ansible pull with line-folding
+      cron:
+        name: ansible-pull
+        job: >
+          ansible-pull playbook.yml -U https://github.com/phlcrny/ansible-setup.git
+          -d /etc/ansible-setup/
+          -e "user={{ user }} dotfiles_src={{ dotfiles_src }}"
+          --clean
+        state: present
+        minute: "0"
+        hour: "18"
+        day: "*"
+        month: "*"
+      tags:
+        - ansible-pull
 ...
