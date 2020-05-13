@@ -5,7 +5,7 @@ stages:
 
 lint:
   script:
-  - ansible-lint .
+  - ansible-lint . -c .ansible-lint
   stage: test
   tags:
   - docker

@@ -23,6 +23,7 @@
     <file source="vscode/settings.json" destination=".vscode/settings.json"/>
     <file source="vscode/extensions.json" destination=".vscode/extensions.json"/>
     <file source="Ansible/ansible.cfg" destination="ansible.cfg"/>
+    <file source="Ansible/.ansible-lint" destination=".ansible-lint"/>
     <file source="Ansible/requirements.yml" destination="requirements.yml"/>
     <file source="Ansible/main.yml" destination="tasks/main.yml"/>
     <file source="Ansible/main.yml" destination="handlers/main.yml"/>
