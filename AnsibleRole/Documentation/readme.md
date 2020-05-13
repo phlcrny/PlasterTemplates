@@ -11,5 +11,7 @@ Example
       hosts: all
       become: yes
       roles:
-      - <%= $PLASTER_PARAM_Name %>
+        - role: <%= $PLASTER_PARAM_Name %>
+          tags: ["example"]
+          vars: []
     ...
