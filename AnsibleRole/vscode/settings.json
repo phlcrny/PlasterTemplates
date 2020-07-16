@@ -1,8 +1,18 @@
 {
     "files.associations": {
         ".ansible-lint": "yaml",
-        "devcontainer.json": "jsonc",
+        "devcontainer.json": "jsonc"
     },
     "files.defaultLanguage": "yaml",
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "[ansible]": {
+        "editor.rulers": [
+          160 /* ansible-lint #204 - https://github.com/ansible/ansible-lint/blob/master/lib/ansiblelint/rules/LineTooLongRule.py */
+        ]
+    },
+    "[yaml]": {
+        "editor.rulers": [
+          160 /* ansible-lint #204 - https://github.com/ansible/ansible-lint/blob/master/lib/ansiblelint/rules/LineTooLongRule.py */
+        ]
+    }
 }
