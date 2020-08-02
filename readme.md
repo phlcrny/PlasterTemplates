@@ -1,5 +1,7 @@
 # Plaster Templates
 
+[![Docker Automated build](https://img.shields.io/docker/automated/phlcrny/ansible)](https://hub.docker.com/repository/docker/build/phlcrny/ansible/)
+
 [Plaster](https://github.com/PowerShell/Plaster) is a Powershell project templater which makes it quicker to create consistent projects.
 
 ## Prerequisites
