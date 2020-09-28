@@ -4,5 +4,4 @@ rulesdir: []
 skip_list: []
 warn_list: []
 verbosity: 1
-
 ...
