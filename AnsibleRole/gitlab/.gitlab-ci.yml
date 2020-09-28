@@ -1,3 +1,5 @@
+---
+# Docs: https://docs.gitlab.com/ce/ci/yaml
 image: phlcrny/ansible
 
 stages:
@@ -9,3 +11,4 @@ lint:
   stage: test
   tags:
   - docker
+...
