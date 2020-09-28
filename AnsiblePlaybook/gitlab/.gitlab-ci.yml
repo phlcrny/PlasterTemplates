@@ -1,4 +1,5 @@
 ---
+# Docs: https://docs.gitlab.com/ce/ci/yaml
 image: phlcrny/ansible
 
 stages:
@@ -31,8 +32,16 @@ deploy:
       # Remove .vault_pass as soon as we don't need it
     - rm "$(pwd)/.vault_pass" -f
   only:
-    - master
-      # We don't want to (accidentally) deploy unfinished code
+    refs:
+      - master
+      - schedules
+    changes:
+      - files/**/*
+      - templates/**/*
+      - group_vars/**/*
+      - inventory
+      - playbook.yml
+      - .gitlab-ci.yml
   tags:
     - docker
 ...
