@@ -13,7 +13,7 @@
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
 	],
 	"containerEnv": {
-		"ANSIBLE_CONFIG": "${containerWorkspaceFolder}/ansible.cfg"
+		// "ANSIBLE_CONFIG": "${containerWorkspaceFolder}/ansible.cfg"
 	},
 	"postCreateCommand": ""
 }
