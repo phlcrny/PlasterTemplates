@@ -1,6 +1,11 @@
 ---
-- name: example-role
-  src: https://github.com/philccarney/PlasterTemplates
-  scm: git
-  version: master
+roles:
+  - name: example-role
+    src: https://github.com/philccarney/PlasterTemplates
+    scm: git
+    version: master
+
+collections:
+  - name: community.kubernetes
+    version: 0.9.0
 ...
